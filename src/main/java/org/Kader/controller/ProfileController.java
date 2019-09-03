@@ -18,17 +18,17 @@ public class ProfileController {
 	    @Autowired
 	    CustomerService customerService;
 
-	    @RequestMapping(value = "/profile", method = RequestMethod.POST)
+	    @RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
 	    public Customer save(@RequestBody Customer customer) {
 	        return customerService.save(customer);
 	    }
 
-	    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+	    @RequestMapping(value = "/getCustomerById", method = RequestMethod.GET)
 	    public Customer fetch(@RequestParam int profileId) {
 	        return customerService.fetchById(profileId);
 	    }
 
-	    @RequestMapping(value = "/profiles", method = RequestMethod.GET)
+	    @RequestMapping(value = "/getAllCustomers", method = RequestMethod.GET)
 	    public List<Customer> fetch() {
 	        return customerService.fetchAllProfiles();
 	    }
