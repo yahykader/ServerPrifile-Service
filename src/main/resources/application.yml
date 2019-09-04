@@ -1,6 +1,5 @@
 server:
-  port: 8181    
-  
+  port: 8181     
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/profileDB?serverTimezone=EST5EDT&createDatabaseIfNotExist=true

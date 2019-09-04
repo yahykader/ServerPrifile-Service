@@ -43,6 +43,14 @@
 			<artifactId>spring-cloud-starter-oauth2</artifactId>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/org.codehaus.sonar/sonar-maven-plugin -->
+		<dependency>
+		    <groupId>org.codehaus.sonar</groupId>
+		    <artifactId>sonar-maven-plugin</artifactId>
+		    <version>5.1</version>
+		</dependency>
+		
+		
 	<!-- 	<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
@@ -59,6 +67,26 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	
+	
+	 <profiles>
+	        <profile>
+	            <id>sonar</id>
+	            <activation>
+	                <activeByDefault>true</activeByDefault>
+	            </activation>
+	            <properties>
+	                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+	                <sonar.host.url> http://localhost:9000 </sonar.host.url>
+					<!--Uncomment below few lines if you are using external databases(Oracle/DB2/Mysql) -->
+					<sonar.jdbc.url>jdbc:mysql://localhost:3306/profileDB?serverTimezone=EST5EDT&amp;createDatabaseIfNotExist=true</sonar.jdbc.url>
+					<sonar.jdbc.driver>com.mysql.cj.jdbc.Driver</sonar.jdbc.driver>
+					<sonar.jdbc.username>root</sonar.jdbc.username>
+					<sonar.jdbc.password>root</sonar.jdbc.password>            
+	            </properties>
+	        </profile>
+	   </profiles>
 
 	<dependencyManagement>
 		<dependencies>
