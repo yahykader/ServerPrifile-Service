@@ -42,20 +42,16 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-oauth2</artifactId>
 		</dependency>
-		
 		<!-- https://mvnrepository.com/artifact/org.codehaus.sonar/sonar-maven-plugin -->
 		<dependency>
 		    <groupId>org.codehaus.sonar</groupId>
 		    <artifactId>sonar-maven-plugin</artifactId>
 		    <version>5.1</version>
 		</dependency>
-		
-		
 	<!-- 	<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency> -->
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -67,10 +63,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
-	
-	
-	 <profiles>
+     <profiles>
 	        <profile>
 	            <id>sonar</id>
 	            <activation>
@@ -87,7 +80,6 @@
 	            </properties>
 	        </profile>
 	   </profiles>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -133,7 +125,6 @@
 						</goals>
 						<configuration>
 							<!-- Sets the path to the file which contains the execution data. -->
-
 							<dataFile>target/jacoco.exec</dataFile>
 							<!-- Sets the output directory for the code coverage report. -->
 							<outputDirectory>target/my-reports</outputDirectory>
@@ -149,5 +140,4 @@
 			
 		</plugins>
 	</build>
-
 </project>
