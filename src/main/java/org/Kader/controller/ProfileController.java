@@ -31,6 +31,8 @@ public class ProfileController {
 	    }
 
 	    @RequestMapping(value = "/getAllCustomers", method = RequestMethod.GET)
+	    //@PreAuthorize("hasAuthority('read_profile')")
+	    @PreAuthorize("hasRole('ROLE_operator')")
 	    public List<Customer> fetch() {
 	        return customerService.fetchAllProfiles();
 	    }
